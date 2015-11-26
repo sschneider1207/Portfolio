@@ -16,13 +16,13 @@ defmodule Portfolio.Router do
   scope "/", Portfolio do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
-
     resources "/project", ProjectController
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", Portfolio do
-  #   pipe_through :api
-  # end
+  scope "/api", Portfolio do
+     pipe_through :api
+
+     post "/user", UserController, :create
+  end
 end

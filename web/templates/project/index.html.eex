@@ -16,7 +16,7 @@
     <tr>
       <td><%= project.name %></td>
       <td><%= project.description %></td>
-      <td><%= project.url %></td>
+      <td><%= link "#{project.url}", to: project.url %></td>
       <td><%= project.language %></td>
 
       <td class="text-right">
