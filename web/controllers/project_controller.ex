@@ -4,6 +4,7 @@ defmodule Portfolio.ProjectController do
   alias Portfolio.Project
 
   plug :scrub_params, "project" when action in [:create, :update]
+  plug Guardian.Plug.EnsureAuthenticated, [on_failure: { Portfolio.AuthHandler, :unauthenticated }] when action in [:new, :create, :edit, :update, :delete]
 
   def index(conn, _params) do
     project = Repo.all(Project)

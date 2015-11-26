@@ -7,6 +7,7 @@ defmodule Portfolio.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug Guardian.Plug.VerifySession
   end
 
   pipeline :api do
@@ -17,6 +18,10 @@ defmodule Portfolio.Router do
     pipe_through :browser # Use the default browser stack
 
     resources "/project", ProjectController
+
+    get "/auth/new", SessionController, :new
+    post "/auth", SessionController, :create
+    get "/auth/logout", SessionController, :delete
   end
 
   # Other scopes may use custom stacks.
