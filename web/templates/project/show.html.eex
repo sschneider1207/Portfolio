@@ -1,28 +1,15 @@
-<h2>Show project</h2>
+<div class="project", data-language="<%= @project.language %>">
 
-<ul>
+  <div class="project-title">
+    <h2><%= link "#{@project.name}", to: @project.url%></h2>
+  </div>
 
-  <li>
-    <strong>Name:</strong>
-    <%= @project.name %>
-  </li>
+  <div class="project-description">
+    <h4><%= @project.description %></h4>
+  </div>
 
-  <li>
-    <strong>Description:</strong>
-    <%= @project.description %>
-  </li>
+  <div class="project-language">
+    <p><%= @project.language %></p>
+  </div>
 
-  <li>
-    <strong>Url:</strong>
-    <%= @project.url %>
-  </li>
-
-  <li>
-    <strong>Language:</strong>
-    <%= @project.language %>
-  </li>
-
-</ul>
-
-<%= link "Edit", to: project_path(@conn, :edit, @project) %>
-<%= link "Back", to: project_path(@conn, :index) %>
+</div>

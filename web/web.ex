@@ -48,6 +48,8 @@ defmodule Portfolio.Web do
       use Phoenix.HTML
 
       import Portfolio.Router.Helpers
+
+      import Portfolio.ViewHelpers
     end
   end
 

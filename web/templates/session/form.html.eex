@@ -1,4 +1,4 @@
-<%= form_for @conn, @action, [name: :user], fn f -> %>
+<%= form_for @conn, @action, [as: :user], fn f -> %>
   <div class="form-group">
     <%= label f, :username, "Username", class: "control-label" %>
     <%= text_input f, :username, class: "form-control" %>

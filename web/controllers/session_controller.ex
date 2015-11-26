@@ -19,11 +19,11 @@ defmodule Portfolio.SessionController do
       |> Guardian.Plug.sign_in(record)
       |> redirect(to: project_path(conn, :index))
     else
-      render(conn, "403.html", params)
+      render(conn, Portfolio.ErrorView, "403.html", params)
     end
   end
 
-  def delete(conn, params) do
+  def delete(conn, _params) do
     Guardian.Plug.sign_out(conn)
     |> put_flash(:info, "Logged out successfully.")
     |> redirect(to: project_path(conn, :index))

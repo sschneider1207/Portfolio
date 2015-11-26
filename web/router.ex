@@ -17,9 +17,9 @@ defmodule Portfolio.Router do
   scope "/", Portfolio do
     pipe_through :browser # Use the default browser stack
 
-    resources "/project", ProjectController
+    resources "/projects", ProjectController
 
-    get "/auth/new", SessionController, :new
+    get "/auth/login", SessionController, :new
     post "/auth", SessionController, :create
     get "/auth/logout", SessionController, :delete
   end
@@ -28,6 +28,6 @@ defmodule Portfolio.Router do
   scope "/api", Portfolio do
      pipe_through :api
 
-     post "/user", UserController, :create
+     post "/users", UserController, :create
   end
 end
