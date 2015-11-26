@@ -1,7 +1,7 @@
 <div class="project", data-language="<%= @project.language %>">
 
   <div class="project-title">
-    <h2><%= link "#{@project.name}", to: @project.url%></h2>
+    <h2><%= link "#{@project.name}", to: @project.url, target: "_blank" %></h2>
   </div>
 
   <div class="project-description">
